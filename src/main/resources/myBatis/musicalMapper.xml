@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guksi.dto.MusicalDto">
+	<resultMap type="Musical" id="basicMusicalMap">
+		<id column="MUSICAL_TITLE" property="title" />
+		<result column="MUSICAL_PICTURE" property="musicalPic" />
+		<result column="MUSICAL_POSTER" property="poster" />
+		<result column="MUSICAL_HALL" property="hall" />
+		<result column="START_DATE" property="startDate" />
+		<result column="END_DATE" property="endDate" />
+		<result column="MUSICAL_CASTING" property="casting" />
+	</resultMap>
+
+
+	<select id="getCurrentMusicals" resultMap="basicMusicalMap">
+		select * from MUSICALS
+		where sysdate &gt; #{START_DATE} and sysdate &lt; #{END_DATE} order by
+		START_DATE
+	</select>
+
+	<select id="getPastMusicals" resultMap="basicMusicalMap">
+		select * from MUSICALS
+		where sysdate &gt; #{END_DATE} order by START_DATE
+	</select>
+
+	<select id="getFutureMusicals" resultMap="basicMusicalMap">
+		select
+		* from MUSICALS
+		where sysdate &lt; #{START_DATE} order by START_DATE
+	</select>
+
+	<select id="getMusicals" parameterType="string"
+		resultMap="basicMusicalMap">
+		select * from MUSICALS where title=#{MUSICAL_TITLE}
+	</select>
+
+	<select id="currentMusicalCnt" resultType="int">
+		select count(*) from
+		MUSICALS where sysdate &gt; #{START_DATE} and sysdate &lt; #{END_DATE}
+		order by START_DATE
+	</select>
+
+</mapper>
