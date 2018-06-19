@@ -27,6 +27,7 @@ select * from board where board_no=#{board_no}
 				select * from board order by board_no desc) aa
 		) 
 	where numrow &gt;=0 and numrow &lt;= 6
+	
 </select>
 
 </mapper>

@@ -78,10 +78,10 @@ String context = request.getContextPath();
     <div class="container">
       <h1 class="my-4 text-center text-lg-left">K-MOVE GALLERY</h1>
       <div class="row text-center text-lg-left">
-      <c:forEach items="${board}" var="board">
+      <c:forEach items="${musical}" var="list">
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="board_detail?board_no=${board.board_no }" class="d-block mb-4 h-100">
-            <img name="main_img" class="img-fluid img-thumbnail" src="img/${board.board_file}" alt="1">
+          <a href="#<%-- board_detail?board_no=${board.board_no } --%>" class="d-block mb-4 h-100">
+            <img name="main_img" class="img-fluid img-thumbnail" src="img/${musical.poster}" alt="1">
           </a>
         </div>
         </c:forEach>
