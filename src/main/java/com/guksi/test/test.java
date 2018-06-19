@@ -34,6 +34,7 @@ public class test {
 		for (int i = 0; i < list.size(); i++) {
 			mylog.trace(list.get(i).toString());
 		}
+		
 	}
 
 }
