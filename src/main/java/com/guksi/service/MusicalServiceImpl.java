@@ -37,6 +37,7 @@ public class MusicalServiceImpl implements MusicalService{
 	public MusicalDto getMusicals(String title) {
 		MusicalDto result = mDao.getMusicals(title);
 		return result;
+		
 	}
 
 }
