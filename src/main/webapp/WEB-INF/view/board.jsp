@@ -106,7 +106,7 @@ String context = request.getContextPath();
          </c:forEach>
       </table>
       <div class="huge-top">
-         <button class="btn btn-normal pull-right" id="insert" onclick="">쓰기</button>
+         <button class="btn btn-normal pull-right" id="insert" onclick="location.href='insertCmt.jsp'">쓰기</button>
       </div>
    
     </div>
