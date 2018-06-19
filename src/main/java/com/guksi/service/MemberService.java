@@ -4,6 +4,7 @@ package com.guksi.service;
 import com.guksi.dto.MemberDto;
 
 public interface MemberService {
+	MemberDto joinAfter(MemberDto dto);
 	MemberDto idSelect(String id);
-	String logincheck(String id , String pass);
+	String loginCheck(String id , String pass);
 }

@@ -12,11 +12,16 @@
 		<result column="joindate" property="joindate"/>
 	</resultMap>
 	
-   <select id="idSelect" parameterType="string" resultMap="MemberMap">
+	<insert id="join" parameterType="string">
+		insert into members (id, name, password, email, joindate)
+		values(#{id}, #{name},#{password},  #{email}, sysdate)
+	</insert>
+	
+   <select id="idSelect" parameterType="string" resultType="members">
 		select * from members where id=#{id}
 	</select>
 	
-	<select id="logincheck" parameterType="hashMap" resultType="java.lang.String">
-		select rownum numrow from members where id=#{id} and password=#{pass}
+	<select id="loginCheck" parameterType="hashMap" resultType="java.lang.String">
+		select numrow from members where id=#{id} and password=#{password}
 	</select>
 </mapper>

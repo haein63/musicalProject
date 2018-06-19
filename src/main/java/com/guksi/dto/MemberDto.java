@@ -1,7 +1,5 @@
 package com.guksi.dto;
 
-import java.util.Date;
-
 public class MemberDto {
 	
 	private String id;

@@ -7,25 +7,37 @@ import org.springframework.stereotype.Service;
 
 import com.guksi.dao.MemberDao;
 import com.guksi.dto.MemberDto;
+
 @Service
 public class MemberServiceImpl implements MemberService {
-
-	
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	@Autowired
 	MemberDao dao;
-	
+
 	@Override
 	public MemberDto idSelect(String id) {
-		MemberDto member = dao.idSelect(id);  
-		return member;
+		System.out.println("service++"+id);
+		MemberDto member = dao.idSelect(id);
+		if ( member== null) {
+			return null;
+		} else {
+			return member;
+		}
 	}
 
 	@Override
-	public String logincheck(String id, String pass) {
-		
-		return dao.logincheck(id, pass);
+	public String loginCheck(String id, String pass) {
+
+		return dao.loginCheck(id, pass);
 	}
 
+	@Override
+	public MemberDto joinAfter(MemberDto dto) {
+		int result = dao.join(dto);
+		if (result == 1) {
+			return dao.idSelect(dto.getId());
+		}
+		return null;
+	}
 }

@@ -4,5 +4,6 @@ import com.guksi.dto.MemberDto;
 
 public interface MemberDao {
 	MemberDto idSelect(String id);
-	String logincheck(String id, String pass);
+	String loginCheck(String id, String pass);
+	int join(MemberDto dto);
 }

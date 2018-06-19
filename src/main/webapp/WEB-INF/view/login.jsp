@@ -149,8 +149,12 @@ img {
 		window.opener.location = "Main";
 		window.close();
 	}
+	
 </script>
 </head>
+<%
+String context = request.getContextPath();
+%>
 <body>
 	<div class="main">
 		<form action="loginCheck" method="post">
@@ -165,7 +169,7 @@ img {
 					<br> <br>
 				<p
 					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
-					사이트가 처음이신가요? <a href="/join" style="color: white;">회원가입</a>
+					사이트가 처음이신가요? <a href="<%=context %>/join" style="color: white;">회원가입</a>
 				</p>
 				<br>
 			</fieldset>

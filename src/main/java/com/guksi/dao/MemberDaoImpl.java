@@ -16,15 +16,26 @@ public class MemberDaoImpl implements MemberDao {
 	
 	@Override
 	public MemberDto idSelect(String id) {
-		return session.selectOne("idSelect",id);
+		System.out.println("dao"+id);
+		MemberDto dto = session.selectOne("idSelect",id);
+		System.out.println("da결과: "+dto);
+		return dto;
 	}
 
 	@Override
-	public String logincheck(String id, String pass) {
+	public String loginCheck(String id, String pass) {
 		Map<String, String> map=new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pass);
-		return session.selectOne("logincheck",map);
+		return session.selectOne("loginCheck",map);
 	}
+
+	@Override
+	public int join(MemberDto dto) {
+		int result =session.insert("join",dto);
+		return result; 
+	}
+
+	
 
 }

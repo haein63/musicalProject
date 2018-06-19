@@ -37,9 +37,9 @@ img{
   </head>
 <script type="text/javascript">
 
-function showPopup(){
+/* function showPopup(){
 	window.open("login","LOGIN","width=300px,height=480px,left=100,top=50")
-}
+} */
 
 </script>
   <body>
@@ -61,7 +61,7 @@ String context = request.getContextPath();
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="showPopup();" >Login</a>
+              <a class="nav-link" href="login" >Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="board">Board</a>
