@@ -8,7 +8,7 @@
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	
-	<typeAliases>
+	<!-- <typeAliases>
 		<typeAlias type="com.guksi.dto.MemberDto" alias="members" />
 		<typeAlias type="com.guksi.dto.BoardDto" alias="board" />
 		<typeAlias type="com.guksi.dto.MusicalDto" alias="musical" />
@@ -18,5 +18,5 @@
 		<mapper resource="myBatis/membersMapper.xml"></mapper>
 		<mapper resource="myBatis/BoardMapper.xml"></mapper>
 		<mapper resource="myBatis/musicalMapper.xml"></mapper>
-	</mappers>
+	</mappers> -->
 </configuration>

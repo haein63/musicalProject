@@ -1,7 +1,8 @@
 package com.guksi.dao;
 
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import com.guksi.dto.MusicalDto;
 
 @Repository
-public class MusicalImpl implements MusicalDao{
-	private final String ns = "com.homepage.dto.Musical.";
+public class MusicalDaoImpl implements MusicalDao{
+	private final String ns = "com.guksi.dto.MusicalDto.";
 	
 	@Autowired
 	SqlSessionTemplate session;
@@ -44,6 +45,13 @@ public class MusicalImpl implements MusicalDao{
 	public int currentMusicalCnt() {
 		String statement = ns+"currentMusicalCnt";
 		return session.selectOne(statement);
+	}
+
+	@Override
+	public List<MusicalDto> musical_desc() {
+		String statement = ns+"musical_desc";
+
+		return session.selectList(statement);
 	}
 
 	

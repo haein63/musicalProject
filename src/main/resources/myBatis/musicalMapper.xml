@@ -5,6 +5,7 @@
 <mapper namespace="com.guksi.dto.MusicalDto">
 	<resultMap type="Musical" id="basicMusicalMap">
 		<id column="MUSICAL_TITLE" property="title" />
+		<result column="numrow" property="numrow"/>
 		<result column="MUSICAL_PICTURE" property="musicalPic" />
 		<result column="MUSICAL_POSTER" property="poster" />
 		<result column="MUSICAL_HALL" property="hall" />
@@ -39,7 +40,20 @@
 	<select id="currentMusicalCnt" resultType="int">
 		select count(*) from
 		MUSICALS where sysdate &gt; #{START_DATE} and sysdate &lt; #{END_DATE}
-		order by START_DATE
+	</select>
+
+	<select id="musical_desc" resultMap="basicMusicalMap">
+		
+		Select * from (
+			select ROWNUM numrow, aa.*
+			from (
+				select *
+				from musicals
+				where sysdate &gt; START_DATE and sysdate &lt; END_DATE
+                ORDER BY MUSICALS.START_DATE
+                ) aa
+		)
+
 	</select>
 
 </mapper>

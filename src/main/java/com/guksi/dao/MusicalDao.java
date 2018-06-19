@@ -14,4 +14,6 @@ public interface MusicalDao {
 	MusicalDto getMusicals(String title);
 	
 	int currentMusicalCnt();
+	
+	List<MusicalDto> musical_desc();
 }
