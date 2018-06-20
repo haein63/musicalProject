@@ -2,6 +2,9 @@ package com.guksi.service;
 
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +42,12 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDto loginCheck(MemberDto dto) {
-		
-		return null;
+	public MemberDto loginCheck(String id,String pass) {
+		Map<String, String> loginInfo = new HashMap<>();
+		loginInfo.put("id", id);
+		loginInfo.put("pass", pass);
+		MemberDto dto = dao.loginCheck(loginInfo);
+		return dto;
 	}
 
 	

@@ -2,6 +2,8 @@ package com.guksi.dao;
 
 
 
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -30,9 +32,9 @@ public class MemberDaoImpl implements MemberDao {
 
 
 	@Override
-	public MemberDto loginCheck(MemberDto dto) {
-		// TODO Auto-generated method stub
-		return null;
+	public MemberDto loginCheck(Map<String, String> loginInfo) {
+		MemberDto dto = session.selectOne("loginCheck", loginInfo);
+		return dto;
 	}
 
 	

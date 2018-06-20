@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link
 	href="https://fonts.googleapis.com/css?family=Anton|Nanum+Gothic|Francois+One|Krona+One|Passion+One"
 	rel="stylesheet">
@@ -59,7 +60,20 @@ text-align: center;
 
 	<div class="empty_box"></div>
 	<div class="sign_box">
+		<%
+		if(session.getAttribute("id")==null || session.getAttribute("id")==""){
+			
+		
+			
+		%>
 		<input class="login" type="button" value="로그인" onclick="location.href='login'">
+		<%
+		}else{
+		%>
+		<input class="login" type="button" value="로그아웃" onclick="location.href='login'">
+		<%
+		}
+		%>
 		<div class="separation">/</div>
 		<input class="join" type="button" value="회원가입" onclick="location.href='join'">
 	</div>

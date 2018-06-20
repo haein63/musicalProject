@@ -6,6 +6,6 @@ import com.guksi.dto.MemberDto;
 public interface MemberService {
 	MemberDto joinAfter(MemberDto dto);
 	MemberDto idSelect(String id);
-	MemberDto loginCheck(MemberDto dto);
+	MemberDto loginCheck(String id, String pass);
 
 }
