@@ -1,106 +1,90 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="ko">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>K-MOVE GALLERY</title>
-
-    <!-- Bootstrap core CSS -->
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
-	   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-body {
-  font-family: 'Jeju Gothic', serif;
-  padding-top: 54px;
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>INTERMISSION</title>
+</head>
+<style>
+* {
+	box-sizing: border-box;
 }
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+.musical_box {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: gray;
 }
-img{
 
+.poster {
+	position: relative;
+	width: 25%;
+	/* max-width:20%; */
+	height: 35%;
+	/* max-height:30%; */ 
+	margin : 10px;
+	display: table;
+	margin: 10px;
+}
+
+.img {
+	display: inline-block;
+	 width: 100%;
+	height: 100%;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5); /* Black see-through */
+	width: 100%;
+	height: 100%;
+	transition: .5s ease;
+	opacity: 0;
+	color: white;
+	padding: 20px;
+	transition: .5s ease;
+	font-size: 30px;
+	
+}
+
+.contents {
+	/* position: absolute; */
+	top: 30%;
+	width:100%;
+	text-align: center;
+	margin-top: 120px;
+}
+
+.poster:hover .overlay {
+	opacity: 1;
 }
 </style>
-  </head>
-<script type="text/javascript">
 
-function showPopup(){
-	window.open("login","LOGIN","width=300px,height=480px,left=100,top=50")
-}
+<body>
 
-</script>
-  <body>
-<%
-String context = request.getContextPath();
-%>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">K-MOVE 3 Generation</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="main">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="" onclick="showPopup();" >Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="board">Board</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Creator</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
+	<jsp:include page="include/slide.jsp"></jsp:include><!-- 슬라이드 -->
+	<jsp:include page="include/menu.jsp"></jsp:include><!-- 메뉴 -->
 
-    <!-- Page Content -->
-    <div class="container">
-      <h1 class="my-4 text-center text-lg-left">K-MOVE GALLERY</h1>
-      <div class="row text-center text-lg-left">
-      <c:forEach items="${musical}" var="musical">
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <a href="#<%-- board_detail?board_no=${board.board_no } --%>" class="d-block mb-4 h-100">
-            <img name="main_img" class="img-fluid img-thumbnail" src="img/${musical.poster}" alt="1">
-          </a>
-        </div>
-        </c:forEach>
-    </div>
-    </div>
-    <!-- /.container -->
+	<div class="musical_box">
+		<c:forEach items="${musical}" var="musical">
+			<div class="poster">
+				<img src="img/${musical.poster}" class="img">
+				<div class="overlay">
+					<div class="contents">${musical.title}</div>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; JANG MOON KIM</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-
-  </body>
-
+	<jsp:include page="include/scroll.jsp"></jsp:include><!-- 스크롤 -->
+	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
+</body>
 </html>
