@@ -1,5 +1,7 @@
 package com.guksi.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +28,13 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
-	@Override
+	/*@Override
 	public String loginCheck(String id, String pass) {
 
 		return dao.loginCheck(id, pass);
-	}
+	}*/
+	
+	
 
 	@Override
 	public MemberDto joinAfter(MemberDto dto) {
@@ -39,5 +43,11 @@ public class MemberServiceImpl implements MemberService {
 			return dao.idSelect(dto.getId());
 		}
 		return null;
+	}
+
+	@Override
+	public List<MemberDao> loginCheck(String id, String password) {
+	
+		return dao.loginCheck(id, password);
 	}
 }

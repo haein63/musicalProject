@@ -1,10 +1,13 @@
 package com.guksi.service;
 
 
+import java.util.List;
+
+import com.guksi.dao.MemberDao;
 import com.guksi.dto.MemberDto;
 
 public interface MemberService {
 	MemberDto joinAfter(MemberDto dto);
 	MemberDto idSelect(String id);
-	String loginCheck(String id , String pass);
+	List<MemberDao> loginCheck(String id, String password);
 }
