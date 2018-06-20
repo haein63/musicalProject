@@ -159,7 +159,7 @@ String context = request.getContextPath();
 	<div class="main">
 		<form action="loginCheck" method="post">
 			<fieldset class="login">
-				<p id="name">K-move</p>
+				<p id="name">INTERMISSION</p>
 				<input type="text" name="mem_id" id="loginid" placeholder="아이디">
 				<p>
 					<input type="password" name="mem_pw" id="loginpw"
