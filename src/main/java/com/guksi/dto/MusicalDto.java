@@ -11,6 +11,7 @@ public class MusicalDto {
 	private String musicalPic;
 	private String poster;
 	private String hall;
+	private int numrow;
 	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
 	private Date startDate;
 	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
@@ -99,7 +100,12 @@ public class MusicalDto {
 		this.endDate = endDate;
 		this.casting = casting;
 	}
-	
+	public int getNumrow() {
+		return numrow;
+	}
+	public void setNumrow(int numrow) {
+		this.numrow = numrow;
+	}
 	public String getTitle() {
 		return title;
 	}

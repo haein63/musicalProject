@@ -1,8 +1,7 @@
 package com.guksi.dao;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +17,6 @@ public class MusicalDaoImpl implements MusicalDao{
 	SqlSessionTemplate session;
 
 	@Override
-	public List<MusicalDto> getCurrentMusicals() {
-		String statement = ns+"getCurrentMusicals";
-		return session.selectList(statement);
-	}
-
-	@Override
-	public List<MusicalDto> getPastMusicals() {
-		String statement = ns+"getPastMusicals";
-		return session.selectList(statement);
-	}
-
-	@Override
-	public List<MusicalDto> getFutureMusicals() {
-		String statement = ns+"getFutureMusicals";
-		return session.selectList(statement);
-	}
-
-	@Override
 	public MusicalDto getMusicals(String title) {
 		String statement = ns+"getMusicals";
 		return session.selectOne(statement,title);
@@ -47,10 +28,22 @@ public class MusicalDaoImpl implements MusicalDao{
 		return session.selectOne(statement);
 	}
 
-	@Override
-	public List<MusicalDto> musical_desc() {
-		String statement = ns+"musical_desc";
 
+	@Override
+	public List<MusicalDto> getCurrentmusicals_desc() {
+		String statement = ns+"getCurrentmusicals_desc";
+		return session.selectList(statement);
+	}
+
+	@Override
+	public List<MusicalDto> getPastMusicals_desc() {
+		String statement = ns+"getPastMusicals_desc";
+		return session.selectList(statement);
+	}
+
+	@Override
+	public List<MusicalDto> getFutureMusicals_desc() {
+		String statement = ns+"getFutureMusicals_desc";
 		return session.selectList(statement);
 	}
 

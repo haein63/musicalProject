@@ -25,7 +25,7 @@ public class MainController {
 	
 	@GetMapping(value="/Main2")
 	public String Main(Model model) {
-		List<MusicalDto> mdto = musical.getCurrentMusicals();
+		List<MusicalDto> mdto = musical.getCurrentmusicals_desc();
 		model.addAttribute("musical", mdto);
 		return "Main2";
 	}

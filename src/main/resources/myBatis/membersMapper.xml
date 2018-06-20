@@ -2,26 +2,31 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.guksi.dto.memberDto">
-<resultMap type="members" id="MemberMap">
-		<id column="id" property="id"/>
+<mapper namespace="com.guksi.dto.MemberDto">
+	<resultMap type="members" id="MemberMap">
+		<id column="id" property="id" />
 		<result column="numrow" property="numrow"></result>
-		<result column="name" property="name"/>
-		<result column="pass" property="pass"/>
-		<result column="email" property="email"/>
-		<result column="joindate" property="joindate"/>
+		<result column="name" property="name" />
+		<result column="pass" property="pass" />
+		<result column="email" property="email" />
+		<result column="joindate" property="joindate" />
 	</resultMap>
-	
+
 	<insert id="join" parameterType="string">
-		insert into members (id, name, password, email, joindate)
-		values(#{id}, #{name},#{password},  #{email}, sysdate)
+		insert into members (id, name,
+		password, email, joindate)
+		values(#{id}, #{name},#{password}, #{email},
+		sysdate)
 	</insert>
-	
-   <select id="idSelect" parameterType="string" resultType="members">
+
+	<select id="idSelect" parameterType="string"
+		resultType="members">
 		select * from members where id=#{id}
 	</select>
-	
-	<select id="loginCheck" parameterType="hashMap" resultType="java.lang.String">
-		select numrow from members where id=#{id} and password=#{password}
+
+	<select id="loginCheck" parameterType="hashMap"
+		resultType="java.lang.String">
+		select numrow from members where id=#{id} and
+		password=#{password}
 	</select>
 </mapper>
