@@ -29,6 +29,7 @@ public class MainController {
 		model.addAttribute("musical", mdto);
 		return "Main2";
 	}
+	
 	@GetMapping(value="/musicalInfo")
 	public String getMusicals(@RequestParam String title,Model model) {
 		MusicalDto mdto = musical.getMusicals(title);
