@@ -28,8 +28,5 @@
 	<!-- <select id="loginCheck" parameterType="hashMap" resultType="java.lang.String">
 		select numrow from members where id=#{id} and password=#{password}
 	</select> -->
-	<select id="loginCheck" parameterType="string" resultType="memberDto">
-		select id, password from members where id=#{id} and password=#{password}
 
-	</select>
 </mapper>

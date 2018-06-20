@@ -1,6 +1,6 @@
 package com.guksi.dao;
 
-import java.util.List;
+
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +28,14 @@ public class MemberDaoImpl implements MemberDao {
 		return result; 
 	}
 
+
 	@Override
-	public List <MemberDao> loginCheck(String id, String password) {
+	public MemberDto loginCheck(MemberDto dto) {
+		// TODO Auto-generated method stub
 		return null;
-		
 	}
+
+	
 
 	
 

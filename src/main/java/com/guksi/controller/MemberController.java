@@ -45,35 +45,26 @@ public class MemberController {
 		}
 		else {
 			System.out.println("이미있는애");
-			return "login"; 
+			return "login";
 		}
+	}
 	
 	
-	/*@RequestMapping(value="login")
-	public String login(String id , HttpSession session) {
-		try {
-			if (session.getAttribute("id") != null) {
-				session.setAttribute("id", session.getAttribute("id"));
+		@RequestMapping(value="login")
+		public String login(String id , HttpSession session) {
+			try {
+				if (session.getAttribute("id") != null) {
+					session.setAttribute("id", session.getAttribute("id"));
+				}
+			} catch (Exception e) {
 			}
-		} catch (Exception e) {
-		}
-		return "login";
-	}
-	
-	@PostMapping(value ="loginCheck")
-	public ModelAndView loginCheck(String id, String pass, HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView();
+			return "login";
+
 		
-		mv.addObject("result", service.loginCheck(id, pass));
-		mv.addObject("id", id);
-		mv.setViewName("loginCheck");
-		return mv;
-
-	}*/
 	
 	
 	
-	
+		}
 
 	
 	
@@ -81,5 +72,5 @@ public class MemberController {
 
 	
 	}
-}
+
 

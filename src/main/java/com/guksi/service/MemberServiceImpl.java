@@ -1,6 +1,6 @@
 package com.guksi.service;
 
-import java.util.List;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,13 +27,6 @@ public class MemberServiceImpl implements MemberService {
 			return member;
 		}
 	}
-
-	/*@Override
-	public String loginCheck(String id, String pass) {
-
-		return dao.loginCheck(id, pass);
-	}*/
-	
 	
 
 	@Override
@@ -46,8 +39,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<MemberDao> loginCheck(String id, String password) {
-	
-		return dao.loginCheck(id, password);
+	public MemberDto loginCheck(MemberDto dto) {
+		
+		return null;
 	}
+
+	
 }
