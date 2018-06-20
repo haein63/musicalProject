@@ -1,9 +1,11 @@
 package com.guksi.dao;
 
+import java.util.List;
+
 import com.guksi.dto.MemberDto;
 
 public interface MemberDao {
 	MemberDto idSelect(String id);
-	String loginCheck(String id, String pass);
+	List <MemberDao> loginCheck(String id, String password);
 	int join(MemberDto dto);
 }
