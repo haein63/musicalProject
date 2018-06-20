@@ -15,21 +15,40 @@
 	</resultMap>
 
 
-	<select id="getCurrentMusicals" resultMap="basicMusicalMap">
-		select * from MUSICALS
-		where sysdate &gt; #{START_DATE} and sysdate &lt; #{END_DATE} order by
-		START_DATE
+	<select id="getCurrentmusicals_desc" resultMap="basicMusicalMap">
+		Select * from (
+			select ROWNUM numrow, aa.*
+			from (
+				select *
+				from musicals
+				where sysdate &gt; START_DATE and sysdate &lt; END_DATE
+                ORDER BY MUSICALS.START_DATE
+                ) aa
+		)
 	</select>
 
-	<select id="getPastMusicals" resultMap="basicMusicalMap">
-		select * from MUSICALS
-		where sysdate &gt; #{END_DATE} order by START_DATE
+	<select id="getPastMusicals_desc" resultMap="basicMusicalMap">
+		Select * from (
+			select ROWNUM numrow, aa.*
+			from (
+				select *
+				from musicals
+				where sysdate &gt; END_DATE
+                ORDER BY MUSICALS.START_DATE
+                ) aa
+		)
 	</select>
 
-	<select id="getFutureMusicals" resultMap="basicMusicalMap">
-		select
-		* from MUSICALS
-		where sysdate &lt; #{START_DATE} order by START_DATE
+	<select id="getFutureMusicals_desc" resultMap="basicMusicalMap">
+		Select * from (
+			select ROWNUM numrow, aa.*
+			from (
+				select *
+				from musicals
+				where sysdate &lt; START_DATE
+                ORDER BY MUSICALS.START_DATE
+                ) aa
+		)
 	</select>
 
 	<select id="getMusicals" parameterType="string"
@@ -42,18 +61,5 @@
 		MUSICALS where sysdate &gt; #{START_DATE} and sysdate &lt; #{END_DATE}
 	</select>
 
-	<select id="musical_desc" resultMap="basicMusicalMap">
-		
-		Select * from (
-			select ROWNUM numrow, aa.*
-			from (
-				select *
-				from musicals
-				where sysdate &gt; START_DATE and sysdate &lt; END_DATE
-                ORDER BY MUSICALS.START_DATE
-                ) aa
-		)
-
-	</select>
-
+	
 </mapper>

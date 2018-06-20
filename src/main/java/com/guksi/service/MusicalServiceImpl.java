@@ -16,20 +16,20 @@ public class MusicalServiceImpl implements MusicalService{
 	MusicalDao mDao;
 
 	@Override
-	public List<MusicalDto> getCurrentMusicals() {
-		List<MusicalDto> result = mDao.getCurrentMusicals();
+	public List<MusicalDto> getCurrentmusicals_desc() {
+		List<MusicalDto> result = mDao.getCurrentmusicals_desc();
 		return result;
 	}
 
 	@Override
-	public List<MusicalDto> getPastMusicals() {
-		List<MusicalDto> result = mDao.getPastMusicals();
+	public List<MusicalDto> getPastMusicals_desc() {
+		List<MusicalDto> result = mDao.getPastMusicals_desc();
 		return result;
 	}
 
 	@Override
-	public List<MusicalDto> getFutureMusicals() {
-		List<MusicalDto> result = mDao.getFutureMusicals();
+	public List<MusicalDto> getFutureMusicals_desc() {
+		List<MusicalDto> result = mDao.getFutureMusicals_desc();
 		return result;
 	}
 

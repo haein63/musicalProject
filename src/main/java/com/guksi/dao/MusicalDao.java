@@ -5,15 +5,13 @@ import java.util.List;
 import com.guksi.dto.MusicalDto;
 
 public interface MusicalDao {
-	List<MusicalDto> getCurrentMusicals();
-
-	List<MusicalDto> getPastMusicals();
+	List<MusicalDto> getCurrentmusicals_desc();
 	
-	List<MusicalDto> getFutureMusicals();
+	List<MusicalDto> getPastMusicals_desc();
+	
+	List<MusicalDto> getFutureMusicals_desc();
 	
 	MusicalDto getMusicals(String title);
 	
 	int currentMusicalCnt();
-	
-	List<MusicalDto> musical_desc();
 }
