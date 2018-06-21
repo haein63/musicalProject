@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.guksi.dto.MemberDto;
 import com.guksi.service.MemberService;
@@ -58,7 +59,21 @@ public class MemberController {
 			session.setAttribute("id", mem_id);
 			return "Main2";
 		}
-
+		
 	}
+	
+	   @RequestMapping("logout.do")
+	    public ModelAndView logout(HttpSession session){
+	        service.logout(session);
+	        ModelAndView mav = new ModelAndView();
+	        mav.setViewName("login");
+	        mav.addObject("msg", "logout");
+	        return mav;
+	    }
+	
+	
+
+	
+
 
 }

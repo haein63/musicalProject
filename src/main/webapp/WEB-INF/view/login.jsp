@@ -114,6 +114,7 @@ div#wrap {
 
 body {
 	padding-top: 54px;
+	
 }
 
 @media ( min-width : 992px) {
@@ -158,6 +159,11 @@ String context = request.getContextPath();
 <body>
 	<div class="main">
 		<form action="loginCheck" method="post">
+		  	<c:if test="${msg == 'logout'}">
+		       <div style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
+		                        	로그아웃되었습니다 
+		       </div>
+    		</c:if>
 			<fieldset class="login">
 				<p id="name">INTERMISSION</p>
 				<input type="text" name="mem_id" id="loginid" placeholder="아이디">
@@ -171,7 +177,13 @@ String context = request.getContextPath();
 					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
 					사이트가 처음이신가요? <a href="<%=context %>/join" style="color: white;">회원가입</a>
 				</p>
-				<br>
+				  
+				
+				<p
+					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
+					 <a href="<%=context %>/Main2" style="color: white;">Home으로</a>
+				</p>
+				
 			</fieldset>
 		</form>
 	</div>

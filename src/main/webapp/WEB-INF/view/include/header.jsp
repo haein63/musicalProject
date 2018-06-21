@@ -61,16 +61,13 @@ text-align: center;
 	<div class="empty_box"></div>
 	<div class="sign_box">
 		<%
-		if(session.getAttribute("id")==null || session.getAttribute("id")==""){
-			
-		
-			
+		if(session.getAttribute("id")==null || session.getAttribute("id")==""){	
 		%>
 		<input class="login" type="button" value="로그인" onclick="location.href='login'">
 		<%
 		}else{
 		%>
-		<input class="login" type="button" value="로그아웃" onclick="location.href='login'">
+		<input class="login" type="button" value="로그아웃" onclick="location.href='logout.do'">
 		<%
 		}
 		%>
