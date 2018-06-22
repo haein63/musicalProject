@@ -8,7 +8,6 @@
 <title>INTERMISSION</title>
 </head>
 <style>
-
 * {
 	box-sizing: border-box;
 }
@@ -28,7 +27,7 @@
 	width: 20%;
 	/* max-width:30%; */
 	/* height: 30%; */
-	max-height:30%;
+	max-height: 30%;
 	margin: 10px;
 	display: table;
 	margin: 10px;
@@ -81,15 +80,17 @@
 
 	<div class="musical_box" id="current">
 		<c:forEach items="${musicalF}" var="musical">
-			<div class="poster">
-				<img src="img/${musical.poster}" class="img">
-				<div class="overlay">
-					<div class="contents">${musical.title}</div>
+				<div class="poster">
+					<img src="img/${musical.poster}" class="img">
+				
+					<div class="overlay">
+						<div class="contents">${musical.title}</div>
+					</div>
+					
 				</div>
-			</div>
 		</c:forEach>
 	</div>
-<%-- 
+	<%-- 
 	<div class="musical_box" id="past" style="visibility: hidden;">
 		<c:forEach items="${musicalP}" var="Cmusical">
 			<div class="poster">
@@ -116,33 +117,30 @@
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 <script>
-/* $(document).ready(function name() {
-	$('#pastB').click(function() {
-		console.log(past);
-		$("#past").css("visibility", "visible");
-		$("#future").css("visibility", "hidden");
-		$("#current").css("visibility", "hidden");
+	/* $(document).ready(function name() {
+	 $('#pastB').click(function() {
+	 console.log(past);
+	 $("#past").css("visibility", "visible");
+	 $("#future").css("visibility", "hidden");
+	 $("#current").css("visibility", "hidden");
 
-	});
+	 });
 
-	$('#futureB').click(function() {
-		console.log(future);
+	 $('#futureB').click(function() {
+	 console.log(future);
 
-		$("#past").css("visibility", "hidden");
-		$("#future").css("visibility", "visible");
-		$("#current").css("visibility", "hidden");
+	 $("#past").css("visibility", "hidden");
+	 $("#future").css("visibility", "visible");
+	 $("#current").css("visibility", "hidden");
 
-	});
+	 });
 
-	$('#currentB').click(function() {
-		console.log(current);
-		$("#past").css("visibility", "hidden");
-		$("#future").css("visibility", "hidden");
-		$("#current").css("visibility", "visible");
-	});
-}) */
-
-
-	
+	 $('#currentB').click(function() {
+	 console.log(current);
+	 $("#past").css("visibility", "hidden");
+	 $("#future").css("visibility", "hidden");
+	 $("#current").css("visibility", "visible");
+	 });
+	 }) */
 </script>
 </html>

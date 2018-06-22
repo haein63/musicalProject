@@ -11,8 +11,6 @@
 	padding: 0px;
 }
 .header_box{
-position:absolute;
-top:0px;
 width: 100%;
 height: 40px;
 background-color: #E4E4E4;
