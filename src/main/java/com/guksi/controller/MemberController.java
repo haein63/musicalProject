@@ -47,13 +47,7 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "login")
-	public String login(String id, HttpSession session) {
-		try {
-			if (session.getAttribute("id") != null) {
-				session.setAttribute("id", session.getAttribute("id"));
-			}
-		} catch (Exception e) {
-		}
+	public String login(String id) {
 		return "login";
 	}
 
@@ -77,6 +71,8 @@ public class MemberController {
 	        mav.addObject("msg", "logout");
 	        return mav;
 	    }
+	   
+	
 	   
 	 
 	   
