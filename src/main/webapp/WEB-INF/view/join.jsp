@@ -16,10 +16,12 @@ String context = request.getContextPath();
 .layer{
 
   position:absolute;
-  width:100px;
+  width:200px;
   height:100px;
   top: 10%;
   left:40%;
+  text-align: center;
+
 
 }
 
