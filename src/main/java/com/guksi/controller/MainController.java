@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,11 +25,22 @@ public class MainController {
 	MusicalService musical;
 	
 	@GetMapping(value="/Main2")
-	public String Main(Model model) {
+	public String CMain(Model model) {
 		List<MusicalDto> mdto = musical.getCurrentmusicals_desc();
-		model.addAttribute("musical", mdto);
+		model.addAttribute("musicalC", mdto);
+		mdto=musical.getPastMusicals_desc();
+		model.addAttribute("musicalP", mdto);
+		mdto=musical.getFutureMusicals_desc();
+		model.addAttribute("musicalF", mdto);
 		return "Main2";
 	}
+	
+	/*@ModelAttribute("pMusical")
+	public String PMain(Model model) {
+		List<MusicalDto> mdto = musical.getPastMusicals_desc();
+		model.addAttribute("musical", mdto);
+		return "Main2";
+	}*/
 	
 	@GetMapping(value="/musicalInfo")
 	public String getMusicals(@RequestParam String title,Model model) {

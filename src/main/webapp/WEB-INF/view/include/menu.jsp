@@ -67,9 +67,9 @@ none
 <body>
 	<div class="main_box">
 		<div class="btn-group">
-			<button class="button" id="past">지난 공연</button>
-			<button class="button" id="current">현재 공연</button>
-			<button class="button" id="future">공연 예정</button>
+			<button class="button" id="pastB">지난 공연</button>
+			<button class="button" id="currentB">현재 공연</button>
+			<button class="button" id="futureB">공연 예정</button>
 		</div>
 	</div>
 </body>

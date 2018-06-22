@@ -16,9 +16,9 @@
 	
 
 <div class="w3-content w3-display-container" style="max-width:1000px">
-  <img class="mySlides" src="img/post1.png" style="width:100%">
-  <img class="mySlides" src="img/post2.png" style="width:100%">
-  <img class="mySlides" src="img/post3.png" style="width:100%">
+  <img class="mySlides" src="/img/post1.png" style="width:100%">
+  <img class="mySlides" src="/img/post2.png" style="width:100%">
+  <img class="mySlides" src="/img/post3.png" style="width:100%">
   <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>

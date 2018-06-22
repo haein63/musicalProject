@@ -46,7 +46,7 @@ div#wrap {
 	min-width: 900px;
 }
 
-.login {
+.login1 {
 	width: 300px;
 	height: 350px;
 	/* border: 2px solid #D8D8D8; */
@@ -157,7 +157,7 @@ img {
 String context = request.getContextPath();
 %>
 <body>
-	<%-- <jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 --> --%>
+	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
 		<form action="loginCheck" method="post">
@@ -166,7 +166,7 @@ String context = request.getContextPath();
 		                        	로그아웃되었습니다 
 		       </div>
     		</c:if>
-			<fieldset class="login">
+			<fieldset class="login1">
 				<p id="name">INTERMISSION</p>
 				<input type="text" name="id" id="loginid" placeholder="아이디">
 				<p>
@@ -189,7 +189,7 @@ String context = request.getContextPath();
 			</fieldset>
 		</form>
 	</div>
-	<jsp:include page="include/scroll.jsp"></jsp:include><!-- 스크롤 -->
+	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%><!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 </html>
