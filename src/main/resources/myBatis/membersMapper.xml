@@ -28,7 +28,6 @@
 	<select id="loginCheck" parameterType="Map" resultType="members">
 		select * from members where id=#{id} and password=#{pass}
 	</select>
-	
 
 	
 

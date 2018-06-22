@@ -2,6 +2,7 @@ package com.guksi.dao;
 
 
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -13,5 +14,4 @@ public interface MemberDao {
 	MemberDto loginCheck(Map<String, String> loginInfo);
 	int join(MemberDto dto);
 	void logout(HttpSession session);
-	
 }

@@ -1,5 +1,7 @@
 package com.guksi.service;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import com.guksi.dao.MemberDao;
@@ -10,5 +12,5 @@ public interface MemberService {
 	MemberDto idSelect(String id);
 	MemberDto loginCheck(String id, String pass);
 	void logout(HttpSession session);
-
+	
 }

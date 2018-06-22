@@ -58,6 +58,10 @@ public class MemberServiceImpl implements MemberService {
 		session.invalidate();
 	}
 
+
+
+	
+
 	
 	
 
