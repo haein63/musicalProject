@@ -64,15 +64,18 @@ text-align: center;
 		if(session.getAttribute("id")==null || session.getAttribute("id")==""){	
 		%>
 		<input class="login" type="button" value="로그인" onclick="location.href='login'">
+		<div class="separation">/</div>
+		<input class="join" type="button" value="회원가입" onclick="location.href='join'">
 		<%
 		}else{
 		%>
 		<input class="login" type="button" value="로그아웃" onclick="location.href='logout.do'">
+		<div class="separation">/</div>
+		<input class="memberInfo" type="button" value="회원정보" onclick="location.href='memberInfo'">
 		<%
 		}
 		%>
-		<div class="separation">/</div>
-		<input class="join" type="button" value="회원가입" onclick="location.href='join'">
+
 	</div>
 
-</div>`
+</div>

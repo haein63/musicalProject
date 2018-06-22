@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>K-MOVE GALLERY</title>
+<title>INTERMISSION</title>
 
 <!-- Bootstrap core CSS -->
 <link
@@ -52,7 +52,7 @@ div#wrap {
 	/* border: 2px solid #D8D8D8; */
 	border: 2px solid #A6A6A6;
 	border-radius: 8px;
-	/* margin: 50px 150px 0px 100px; */
+	margin: 0 auto;
 	background-color: #343a40 !important;
 	float: none;
 	top: 150px;
@@ -157,6 +157,8 @@ img {
 String context = request.getContextPath();
 %>
 <body>
+	<%-- <jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 --> --%>
+
 	<div class="main">
 		<form action="loginCheck" method="post">
 		  	<c:if test="${msg == 'logout'}">
@@ -166,9 +168,9 @@ String context = request.getContextPath();
     		</c:if>
 			<fieldset class="login">
 				<p id="name">INTERMISSION</p>
-				<input type="text" name="mem_id" id="loginid" placeholder="아이디">
+				<input type="text" name="id" id="loginid" placeholder="아이디">
 				<p>
-					<input type="password" name="mem_pw" id="loginpw"
+					<input type="password" name="password" id="loginpw"
 						placeholder="비밀번호">
 				<p>
 					<button type="submit" id="loginbt" onclick="windowclose();">로그인</button>
@@ -187,10 +189,8 @@ String context = request.getContextPath();
 			</fieldset>
 		</form>
 	</div>
-	<!-- Bootstrap core JavaScript -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script
-		src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+	<jsp:include page="include/scroll.jsp"></jsp:include><!-- 스크롤 -->
+	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 </html>
 

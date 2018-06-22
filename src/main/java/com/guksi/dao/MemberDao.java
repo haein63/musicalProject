@@ -13,4 +13,5 @@ public interface MemberDao {
 	MemberDto loginCheck(Map<String, String> loginInfo);
 	int join(MemberDto dto);
 	void logout(HttpSession session);
+	
 }
