@@ -2,7 +2,9 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
 <mapper namespace="com.guksi.dto.MusicalDto">
+
 	<resultMap type="Musical" id="basicMusicalMap">
 		<id column="MUSICAL_TITLE" property="title" />
 		<result column="numrow" property="numrow"/>
@@ -51,9 +53,9 @@
 		)
 	</select>
 
-	<select id="getMusicals" parameterType="string"
+	<select id="getMusicals" parameterType="String"
 		resultMap="basicMusicalMap">
-		select * from MUSICALS where title=#{MUSICAL_TITLE}
+		select * from MUSICALS where MUSICAL_TITLE=#{MUSICAL_TITLE}
 	</select>
 
 	<select id="currentMusicalCnt" resultType="int">
