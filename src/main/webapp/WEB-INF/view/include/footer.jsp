@@ -17,8 +17,6 @@
 	justify-content: space-around;
 	align-items: center;
 	justify-content: space-around;
-	bottom: 0px;
-	position: absolute;
 }
 
 .logo_info_box {

@@ -86,6 +86,16 @@ div#wrap {
 	font-family: 'Jeju Gothic', serif;
 }
 
+.header_box {
+	position: absolute;
+	top: 0px;
+}
+
+.footer_box {
+	bottom: 0px;
+	position: absolute;
+}
+
 #loginbt {
 	margin: 0;
 	padding: 0;
@@ -114,7 +124,6 @@ div#wrap {
 
 body {
 	padding-top: 54px;
-	
 }
 
 @media ( min-width : 992px) {
@@ -145,27 +154,25 @@ img {
 }
 </style>
 <script type="text/javascript">
-	
 	function windowclose() {
 		window.opener.location = "Main";
 		window.close();
 	}
-	
 </script>
 </head>
 <%
-String context = request.getContextPath();
+	String context = request.getContextPath();
 %>
 <body>
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
 		<form action="loginCheck" method="post">
-		  	<c:if test="${msg == 'logout'}">
-		       <div style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
-		                        	로그아웃되었습니다 
-		       </div>
-    		</c:if>
+			<c:if test="${msg == 'logout'}">
+				<div
+					style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
+					로그아웃되었습니다</div>
+			</c:if>
 			<fieldset class="login1">
 				<p id="name">INTERMISSION</p>
 				<input type="text" name="id" id="loginid" placeholder="아이디">
@@ -177,19 +184,20 @@ String context = request.getContextPath();
 					<br> <br>
 				<p
 					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
-					사이트가 처음이신가요? <a href="<%=context %>/join" style="color: white;">회원가입</a>
+					사이트가 처음이신가요? <a href="<%=context%>/join" style="color: white;">회원가입</a>
 				</p>
-				  
-				
+
+
 				<p
 					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
-					 <a href="<%=context %>/Main2" style="color: white;">Home으로</a>
+					<a href="<%=context%>/Main2" style="color: white;">Home으로</a>
 				</p>
-				
+
 			</fieldset>
 		</form>
 	</div>
-	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%><!-- 스크롤 -->
+	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%>
+	<!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 </html>
