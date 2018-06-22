@@ -75,8 +75,8 @@
 <body>
 	
 	<div class="musical_box" id="current">
-		<c:forEach items="${musicalC}" var="musical">
-				<div class="poster" onclick="location.href='musicalInfo?title=${musical.title}'">
+		<c:forEach items="${musicalP}" var="musical">
+				<div class="poster" onclick="location.href='musicalInfo?${musical.title}'">
 					<img src="img/${musical.poster}" class="img" alt="${musical.title}">
 					<div class="overlay">
 						<div class="contents">${musical.title}</div>
@@ -136,6 +136,21 @@
 	 });
 	 }) */
 	 
+	 /* 
+	 $('#currentB').click(function() {
+		movepage();
+		 });
+		 })
+	 function movepage() {
+      $.ajax({
+        url: "",
+        dataType: "",
+        success: function(html) {
+          $('#fu').replaceWith($.parseHTML(html));
+          setTimeout(refresh,2000);
+        }
+      });
+    } */
 	 
 </script>
 </html>
