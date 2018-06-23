@@ -35,7 +35,9 @@ public class MainController {
 		return "Main2";
 	}
 	
-
+	/*
+	@GetMapping(value="/past")*/
+	
 	
 	@GetMapping(value="/musicalInfo")
 	public String getMusicals(@RequestParam String title,Model model) {

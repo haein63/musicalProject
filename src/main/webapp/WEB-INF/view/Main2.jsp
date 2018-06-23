@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="com.guksi.dto.MusicalDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -18,18 +20,33 @@
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 <script>
-	$('#currentB').click(function() {
-		toPast();
-	})
 	
-	function toPast() {
+
+	/* function toPast() {
 		$.ajax({
-			url : "past.jsp",
-			dataType : "json",
-			success : function(html) {
-				$('#fu').replaceWith($.parseHTML(html));
+			url : "Main2",
+			type : "get",
+			success : function(data) {
+				console.log(data);
+				$(".musical_box").children().remove();
+					$(".musical_box").append(
+							'<c:forEach items="${musicalC}" var="musical">'+
+							+'<div class="poster"onclick="location.href="+"musicalInfo?title=${musical.title}"+"">'
+							+'<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+							+'<div class="overlay">'
+							+'	<div class="contents">${musical.title}</div>'
+							+'	</div>'
+							+'</div>'
+							+'</c:forEach>'		
+					)
+					
+					
+				
+				
+			
 			}
+
 		});
-	}
+	} */
 </script>
 </html>
