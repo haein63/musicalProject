@@ -34,6 +34,7 @@ img {
 		<li>뮤지컬 캐스트:${musical.casting}
 		<li>뮤지컬 공연기간:${musical.startDate} ~ ${musical.endDate}
 	</ul>
+	<jsp:include page="include/scroll.jsp"></jsp:include><!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 
