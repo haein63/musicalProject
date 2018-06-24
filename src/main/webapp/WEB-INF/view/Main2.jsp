@@ -21,7 +21,6 @@
 	$('#currentB').click(function() {
 		toPast();
 	})
-	
 	function toPast() {
 		$.ajax({
 			url : "past.jsp",
