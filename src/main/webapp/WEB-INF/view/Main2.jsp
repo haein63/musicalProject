@@ -34,8 +34,9 @@
 												+ '<div class="poster">'
 												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
 												+ '<div class="overlay">'
-												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
-												+ '	</div>' + '</div>'
+												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">'
+												+ '<strong class="MT">${musical.title}</strong>'
+												+ '</a>' + '</div>' + '</div>'
 												+ '</c:forEach>')
 					})
 
@@ -47,12 +48,13 @@
 						$(".musical_box")
 								.append(
 										'<c:forEach items="${musicalC}" var="musical">'
-												+ '<div class="poster">'
-												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
-												+ '<div class="overlay">'
-												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
-												+ '	</div>' + '</div>'
-												+ '</c:forEach>')
+										+ '<div class="poster">'
+										+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+										+ '<div class="overlay">'
+										+ '	<a class="contents" href="musicalInfo?title=${musical.title}">'
+										+ '<strong class="MT">${musical.title}</strong>'
+										+ '</a>' + '</div>' + '</div>'
+										+ '</c:forEach>')
 					})
 	$('#futureB')
 			.click(
@@ -62,13 +64,13 @@
 						$(".musical_box")
 								.append(
 										'<c:forEach items="${musicalF}" var="musical">'
-												+ '<div class="poster">'
-												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
-												+ '<div class="overlay">'
-												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
-												+ '	</div>' + '</div>'
-												+ '</c:forEach>')
+										+ '<div class="poster">'
+										+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+										+ '<div class="overlay">'
+										+ '	<a class="contents" href="musicalInfo?title=${musical.title}">'
+										+ '<strong class="MT">${musical.title}</strong>'
+										+ '</a>' + '</div>' + '</div>'
+										+ '</c:forEach>')
 					})
-		
 </script>
 </html>

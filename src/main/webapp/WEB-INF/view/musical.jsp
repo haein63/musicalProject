@@ -11,9 +11,11 @@
 * {
 	box-sizing: border-box;
 }
-body{
-background-color: white;
+
+body {
+	background-color: white;
 }
+
 .musical_box {
 	width: 80%;
 	margin: 0 auto;
@@ -51,19 +53,33 @@ background-color: white;
 	transition: .5s ease;
 	opacity: 0;
 	color: white;
-	padding: 20px;
+	/* padding: 20px; */
 	transition: .5s ease;
 	font-size: 30px;
+	text-align: center;
 }
 
 .contents {
-	margin-top: 30%;
+	/* margin-top: 30%; */
 	width: 100%;
-	height:100%;
-	text-align: center;
-	top: 120px;
+	height: 100%;
+	/* text-align: center; */
+	/* margin-top: 120px; */
 	font-size: 25px;
 	text-decoration: none;
+	display: block;
+	text-align: center;
+}
+
+.MT {
+	width:100%;
+	padding:20px;
+	margin-top:40%;
+	height: 70%;
+	text-align: center;
+	font-size: 25px;
+	text-decoration: none;
+	position: absolute;
 	display: block;
 }
 
@@ -79,13 +95,15 @@ background-color: white;
 			<div class="poster">
 				<img src="img/${musical.poster}" class="img" alt="${musical.title}">
 				<div class="overlay">
-					<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>
+					<a class="contents" href="musicalInfo?title=${musical.title}">
+						<strong class="MT">${musical.title}</strong>
+					</a>
 				</div>
 
 			</div>
 		</c:forEach>
 	</div>
-	
+
 
 </body>
 
