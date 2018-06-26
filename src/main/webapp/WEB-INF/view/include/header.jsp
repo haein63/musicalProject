@@ -24,6 +24,8 @@ width: 10%;
 height: 40px;
 font-family: Anton;
 font-size: 25px;
+text-decoration: none;
+color: black;
 
 }
 .sign_box{

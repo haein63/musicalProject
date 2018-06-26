@@ -12,6 +12,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: white;
+}
+
 .musical_box {
 	width: 80%;
 	margin: 0 auto;
@@ -49,17 +53,34 @@
 	transition: .5s ease;
 	opacity: 0;
 	color: white;
-	padding: 20px;
+	/* padding: 20px; */
 	transition: .5s ease;
 	font-size: 30px;
+	text-align: center;
 }
 
 .contents {
-	top: 30%;
+	/* margin-top: 30%; */
 	width: 100%;
-	text-align: center;
-	margin-top: 120px;
+	height: 100%;
+	/* text-align: center; */
+	/* margin-top: 120px; */
 	font-size: 25px;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+}
+
+.MT {
+	width:100%;
+	padding:20px;
+	margin-top:40%;
+	height: 70%;
+	text-align: center;
+	font-size: 25px;
+	text-decoration: none;
+	position: absolute;
+	display: block;
 }
 
 .poster:hover .overlay {
@@ -70,68 +91,20 @@
 <body>
 
 	<div class="musical_box" id="current">
-		<c:forEach items="${musicalP}" var="musical">
-			<div class="poster"
-				onclick="location.href='musicalInfo?title=${musical.title}'">
+		<c:forEach items="${musicalC}" var="musical">
+			<div class="poster">
 				<img src="img/${musical.poster}" class="img" alt="${musical.title}">
 				<div class="overlay">
-					<div class="contents">${musical.title}</div>
+					<a class="contents" href="musicalInfo?title=${musical.title}">
+						<strong class="MT">${musical.title}</strong>
+					</a>
 				</div>
 
 			</div>
 		</c:forEach>
 	</div>
-	<%-- 
-	<div class="musical_box" id="past" style="visibility: hidden;">
-		<c:forEach items="${musicalP}" var="Cmusical">
-			<div class="poster">
-				<img src="img/${Cmusical.poster}" class="img">
-				<div class="overlay">
-					<div class="contents">${Cmusical.title}</div>
-				</div>
-			</div>
-		</c:forEach>
-	</div>
 
-	<div class="musical_box" id="future" style="visibility: hidden;">
-		<c:forEach items="${musicalF}" var="Cmusical">
-			<div class="poster">
-				<img src="img/${Cmusical.poster}" class="img">
-				<div class="overlay">
-					<div class="contents">${Cmusical.title}</div>
-				</div>
-			</div>
-		</c:forEach>
-	</div> --%>
 
 </body>
-<script>
-	
 
-	/* $(document).ready(function name() {
-	 $('#pastB').click(function() {
-	 console.log(past);
-	 $("#past").css("visibility", "visible");
-	 $("#future").css("visibility", "hidden");
-	 $("#current").css("visibility", "hidden");
-
-	 });
-
-	 $('#futureB').click(function() {
-	 console.log(future);
-
-	 $("#past").css("visibility", "hidden");
-	 $("#future").css("visibility", "visible");
-	 $("#current").css("visibility", "hidden");
-
-	 });
-
-	 $('#currentB').click(function() {
-	 console.log(current);
-	 $("#past").css("visibility", "hidden");
-	 $("#future").css("visibility", "hidden");
-	 $("#current").css("visibility", "visible");
-	 });
-	 }) */
-</script>
 </html>
