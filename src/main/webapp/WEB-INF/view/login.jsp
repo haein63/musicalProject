@@ -137,7 +137,7 @@ body {
 	
 }
 
-img {
+ img {
 	max-width: 640px;
 	padding: .25rem;
 	background-color: #fff;
@@ -145,14 +145,14 @@ img {
 	border-radius: .25rem;
 	margin-bottom: 1.5rem !important;
 	margin-top: 1.5rem !important;
-}
+} 
 
 .main_detail {
 	border: 1px solid #dee2e6;
 	width: 640px;
 	height: 300px;
 	margin-bottom: 1.5rem !important;
-}
+} 
 </style>
 </head>
 <%
