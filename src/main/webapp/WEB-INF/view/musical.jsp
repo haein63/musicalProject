@@ -11,7 +11,9 @@
 * {
 	box-sizing: border-box;
 }
-
+body{
+background-color: white;
+}
 .musical_box {
 	width: 80%;
 	margin: 0 auto;
@@ -70,7 +72,7 @@
 <body>
 
 	<div class="musical_box" id="current">
-		<c:forEach items="${musicalP}" var="musical">
+		<c:forEach items="${musicalC}" var="musical">
 			<div class="poster"
 				onclick="location.href='musicalInfo?title=${musical.title}'">
 				<img src="img/${musical.poster}" class="img" alt="${musical.title}">
@@ -81,57 +83,8 @@
 			</div>
 		</c:forEach>
 	</div>
-	<%-- 
-	<div class="musical_box" id="past" style="visibility: hidden;">
-		<c:forEach items="${musicalP}" var="Cmusical">
-			<div class="poster">
-				<img src="img/${Cmusical.poster}" class="img">
-				<div class="overlay">
-					<div class="contents">${Cmusical.title}</div>
-				</div>
-			</div>
-		</c:forEach>
-	</div>
-
-	<div class="musical_box" id="future" style="visibility: hidden;">
-		<c:forEach items="${musicalF}" var="Cmusical">
-			<div class="poster">
-				<img src="img/${Cmusical.poster}" class="img">
-				<div class="overlay">
-					<div class="contents">${Cmusical.title}</div>
-				</div>
-			</div>
-		</c:forEach>
-	</div> --%>
-
-</body>
-<script>
 	
 
-	/* $(document).ready(function name() {
-	 $('#pastB').click(function() {
-	 console.log(past);
-	 $("#past").css("visibility", "visible");
-	 $("#future").css("visibility", "hidden");
-	 $("#current").css("visibility", "hidden");
+</body>
 
-	 });
-
-	 $('#futureB').click(function() {
-	 console.log(future);
-
-	 $("#past").css("visibility", "hidden");
-	 $("#future").css("visibility", "visible");
-	 $("#current").css("visibility", "hidden");
-
-	 });
-
-	 $('#currentB').click(function() {
-	 console.log(current);
-	 $("#past").css("visibility", "hidden");
-	 $("#future").css("visibility", "hidden");
-	 $("#current").css("visibility", "visible");
-	 });
-	 }) */
-</script>
 </html>

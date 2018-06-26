@@ -10,14 +10,14 @@
 .main_box {
 	background-color: gray;
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	margin: 0 auto;
 	text-align: center;
 }
 
 .btn-group .button {
-	background-color: #4CAF50; /* Green */
-	border: 1px solid green;
+	background-color: black; 
+	border: 1px solid black;
 	color: white;
 	padding: 15px 32px;
 	text-align: center;
@@ -89,7 +89,7 @@ none
 ; /* Prevent double borders */
 }
 .btn-group .button:hover {
-	background-color: #3e8e41;
+	background: rgba(0, 0, 0, 0.5);
 }
 </style>
 <body>

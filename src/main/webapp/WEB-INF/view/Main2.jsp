@@ -19,34 +19,56 @@
 	<jsp:include page="include/scroll.jsp"></jsp:include><!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-	
+	$('#pastB')
+			.click(
+					function() {
+						console.log("clickPast");
+						$(".musical_box").children().remove();
+						$(".musical_box")
+								.append(
+										'<c:forEach items="${musicalP}" var="musical">'
+												+ '<div class="poster">'
+												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+												+ '<div class="overlay">'
+												+ '	<div class="contents">${musical.title}</div>'
+												+ '	</div>' + '</div>'
+												+ '</c:forEach>')
+					})
 
-	/*  function toPast() {
-		$.ajax({
-			url : "Main2",
-			type : "get",
-			success : function(data) {
-				console.log(data);
-				$(".musical_box").children().remove();
-					$(".musical_box").append(
-							'<c:forEach items="${musicalC}" var="musical">'+
-							+'<div class="poster"onclick="location.href="+"musicalInfo?title=${musical.title}"+"">'
-							+'<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
-							+'<div class="overlay">'
-							+'	<div class="contents">${musical.title}</div>'
-							+'	</div>'
-							+'</div>'
-							+'</c:forEach>'		
-					)
-					
-					
-				
-				
-			
-			}
-
-		});
-	}  */
+	$('#currentB')
+			.click(
+					function() {
+						console.log("clickPast");
+						$(".musical_box").children().remove();
+						$(".musical_box")
+								.append(
+										'<c:forEach items="${musicalC}" var="musical">'
+												+ '<div class="poster">'
+												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+												+ '<div class="overlay">'
+												+ '	<div class="contents">${musical.title}</div>'
+												+ '	</div>' + '</div>'
+												+ '</c:forEach>')
+					})
+	$('#futureB')
+			.click(
+					function() {
+						console.log("clickPast");
+						$(".musical_box").children().remove();
+						$(".musical_box")
+								.append(
+										'<c:forEach items="${musicalF}" var="musical">'
+												+ '<div class="poster">'
+												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
+												+ '<div class="overlay">'
+												+ '	<div class="contents">${musical.title}</div>'
+												+ '	</div>' + '</div>'
+												+ '</c:forEach>')
+					})
+		
 </script>
 </html>
