@@ -25,8 +25,6 @@
 .poster {
 	position: relative;
 	width: 20%;
-	/* max-width:30%; */
-	/* height: 30%; */
 	max-height: 30%;
 	margin: 10px;
 	display: table;
@@ -36,8 +34,7 @@
 .img {
 	display: inline-block;
 	width: 100%;
-	height: 100%;
-	/* max-height: 100%; */
+	height: 355px;
 }
 
 .overlay {
@@ -48,8 +45,7 @@
 	bottom: 0;
 	background: rgba(0, 0, 0, 0.5);
 	width: 100%;
-	/* height: 100%; */
-	/* max-height:100%; */
+	height: 355px;
 	transition: .5s ease;
 	opacity: 0;
 	color: white;
@@ -59,7 +55,6 @@
 }
 
 .contents {
-	/* position: absolute; */
 	top: 30%;
 	width: 100%;
 	text-align: center;
@@ -75,7 +70,7 @@
 <body>
 
 	<div class="musical_box" id="current">
-		<c:forEach items="${musicalC}" var="musical">
+		<c:forEach items="${musicalP}" var="musical">
 			<div class="poster"
 				onclick="location.href='musicalInfo?title=${musical.title}'">
 				<img src="img/${musical.poster}" class="img" alt="${musical.title}">
