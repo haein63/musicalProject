@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.guksi.dao.MemberDao;
 import com.guksi.dto.MemberDto;
 
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -57,6 +58,15 @@ public class MemberServiceImpl implements MemberService {
 	public void logout(HttpSession session) {
 		session.invalidate();
 	}
+
+	
+
+
+	
+
+
+
+	
 
 	
 	

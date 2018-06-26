@@ -17,6 +17,7 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
 	rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
@@ -153,12 +154,6 @@ img {
 	margin-bottom: 1.5rem !important;
 }
 </style>
-<script type="text/javascript">
-	function windowclose() {
-		window.opener.location = "Main";
-		window.close();
-	}
-</script>
 </head>
 <%
 	String context = request.getContextPath();
@@ -167,7 +162,7 @@ img {
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
-		<form action="loginCheck" method="post">
+		<form id="form">
 			<c:if test="${msg == 'logout'}">
 				<div
 					style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
@@ -180,7 +175,7 @@ img {
 					<input type="password" name="password" id="loginpw"
 						placeholder="비밀번호">
 				<p>
-					<button type="submit" id="loginbt" onclick="windowclose();">로그인</button>
+					<button id="loginbt">로그인</button>
 					<br> <br>
 				<p
 					style="text-align: center; color: white; font-family: 'Jeju Gothic', serif;">
@@ -199,6 +194,27 @@ img {
 	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%>
 	<!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
+<script type="text/javascript">
+$("#loginbt").on("click",function(){
+	console.log($("#loginid").val());
+	if($("#loginid").val()==null){
+		console.log("아이디입력");
+	}else if($("#password").val()==null){
+		console.log("비밀번호");
+	}else{
+		/* $.ajax({
+			url:'loginCheck',
+			type:'post',
+			data:{id:$("#loginid").val(),
+				pass:$("#password").val()},
+	}) */
+		console.log("얍");
+	}
+})
+
+</script>
+
 </body>
+
 </html>
 

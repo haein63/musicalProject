@@ -43,8 +43,8 @@
 				<br> <input type="text" name="email" placeholder="email">
 				<br> <br> <input type="password" name="password"
 					placeholder="password"> <br> <br> <input
-					type="submit" value="가입"> <br> <br> <a
-					href="<%=context%>/Main2">Home으로</a>
+					type="submit" value="가입"> <br> <br> 
+					<a href="<%=context%>/Main2">Home으로</a>
 			</fieldset>
 
 		</form>

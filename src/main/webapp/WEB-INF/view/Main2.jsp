@@ -22,7 +22,7 @@
 <script>
 	
 
-	/* function toPast() {
+	/*  function toPast() {
 		$.ajax({
 			url : "Main2",
 			type : "get",
@@ -47,6 +47,6 @@
 			}
 
 		});
-	} */
+	}  */
 </script>
 </html>
