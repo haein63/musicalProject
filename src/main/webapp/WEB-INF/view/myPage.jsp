@@ -31,21 +31,12 @@ text-align: center;
 <body>
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
-<<<<<<< HEAD
 	<div class="joinText">
 		<strong>Welcome!</strong><br>
 		${result.id}님. 회원 가입이 정상적으로 처리되었습니다! <br> 
 		<a href="http://localhost:9090/gesipanProject/Main2">home으로</a>
+		<a href="http://localhost:9090/gesipanProject/memberInfo">회원 정보</a>
 	</div>
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
-=======
 
-
-</br>
-<a href="http://localhost:9090/gesipanProject/Main2">home으로</a>
-<a href="http://localhost:9090/gesipanProject/memberInfo">회원 정보</a>
-
-
->>>>>>> branch 'master' of https://github.com/haein63/musicalProject.git
-</body>
 </html>
