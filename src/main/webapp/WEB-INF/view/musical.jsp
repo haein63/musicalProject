@@ -57,11 +57,14 @@ background-color: white;
 }
 
 .contents {
-	top: 30%;
+	margin-top: 30%;
 	width: 100%;
+	height:100%;
 	text-align: center;
-	margin-top: 120px;
+	top: 120px;
 	font-size: 25px;
+	text-decoration: none;
+	display: block;
 }
 
 .poster:hover .overlay {
@@ -73,11 +76,10 @@ background-color: white;
 
 	<div class="musical_box" id="current">
 		<c:forEach items="${musicalC}" var="musical">
-			<div class="poster"
-				onclick="location.href='musicalInfo?title=${musical.title}'">
+			<div class="poster">
 				<img src="img/${musical.poster}" class="img" alt="${musical.title}">
 				<div class="overlay">
-					<div class="contents">${musical.title}</div>
+					<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>
 				</div>
 
 			</div>

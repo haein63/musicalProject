@@ -34,7 +34,7 @@
 												+ '<div class="poster">'
 												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
 												+ '<div class="overlay">'
-												+ '	<div class="contents">${musical.title}</div>'
+												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
 												+ '	</div>' + '</div>'
 												+ '</c:forEach>')
 					})
@@ -50,7 +50,7 @@
 												+ '<div class="poster">'
 												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
 												+ '<div class="overlay">'
-												+ '	<div class="contents">${musical.title}</div>'
+												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
 												+ '	</div>' + '</div>'
 												+ '</c:forEach>')
 					})
@@ -65,7 +65,7 @@
 												+ '<div class="poster">'
 												+ '<img src="img/${musical.poster}" class="img" alt="${musical.title}">'
 												+ '<div class="overlay">'
-												+ '	<div class="contents">${musical.title}</div>'
+												+ '	<a class="contents" href="musicalInfo?title=${musical.title}">${musical.title}</a>'
 												+ '	</div>' + '</div>'
 												+ '</c:forEach>')
 					})
