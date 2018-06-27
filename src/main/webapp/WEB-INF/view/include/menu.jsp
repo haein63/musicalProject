@@ -10,14 +10,16 @@
 .main_box {
 	background-color: gray;
 	width: 100%;
-	height: 60px;
+	height: 70px;
 	margin: 0 auto;
 	text-align: center;
+	
 }
 
-.btn-group .button {
+.button {
+	margin-top:10px;
 	background-color: black; 
-	border: 1px solid black;
+	border: 2px solid black;
 	color: white;
 	padding: 15px 32px;
 	text-align: center;
@@ -28,66 +30,24 @@
 	height: 60px;
 	width: 180px;
 	border-radius: 8px;
+	
 }
 
-.btn-group
-
-
-
- 
-
-
-
-.button
-
-
-
-
-
-
-:not
-
-
-
- 
-
-
-
-(
-:last-child
-
-
-
- 
-
-
-
-)
-{
-border-right
-
-
-
-
-
-
-:
-
-
-
- 
-
-
-
-none
-
-
-
-
-
-
-; /* Prevent double borders */
+.btn-group{
+	display:block;
+	
+	height:100%;
+	
+	/* margin-bottom: 0; */
 }
+
+
+
+ 
+.button :not( :last-child ){ border-right :none; 
+/*  Prevent double borders */ 
+}
+
 .btn-group .button:hover {
 	background: rgba(0, 0, 0, 0.5);
 }
