@@ -1,5 +1,7 @@
 package com.guksi.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.guksi.dto.MemberDto;
+import com.guksi.dto.MusicalDto;
 import com.guksi.service.MemberService;
+import com.guksi.service.MusicalService;
 
 @Controller
 
@@ -24,6 +28,9 @@ public class MemberController {
 	
 	private static Logger mylog = LoggerFactory.getLogger(MemberController.class);
 
+	@Autowired
+	MusicalService musical;
+	
 	@Autowired
 	private MemberService service;
 
@@ -47,23 +54,23 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "login")
-	public String login(String id, HttpSession session) {
-		try {
-			if (session.getAttribute("id") != null) {
-				session.setAttribute("id", session.getAttribute("id"));
-			}
-		} catch (Exception e) {
-		}
+	public String login(String id) {
 		return "login";
 	}
 
 	@PostMapping(value = "loginCheck")
-	public String loginCheck(HttpSession session, String id, String password) {
+	public String loginCheck(Model model, HttpSession session, String id, String password) {
 		MemberDto dto = service.loginCheck(id, password);
 		if (dto == null) {
 			return "login";
 		} else {
 			session.setAttribute("id", id);
+			List<MusicalDto> mdto = musical.getCurrentmusicals_desc();
+			model.addAttribute("musicalC", mdto);
+			mdto=musical.getPastMusicals_desc();
+			model.addAttribute("musicalP", mdto);
+			mdto=musical.getFutureMusicals_desc();
+			model.addAttribute("musicalF", mdto);
 			return "Main2";
 		}
 		
@@ -77,6 +84,8 @@ public class MemberController {
 	        mav.addObject("msg", "logout");
 	        return mav;
 	    }
+	   
+	
 	   
 	 
 	   

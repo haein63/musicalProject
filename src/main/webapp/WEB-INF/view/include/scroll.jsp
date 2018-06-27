@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <script type="text/javascript">
 var page = 1;  //페이징과 같은 방식이라고 생각하면 된다. 
  
-$(function(){  //페이지가 로드되면 데이터를 가져오고 page를 증가시킨다.
-     getList(page);
+ $(function(){  //페이지가 로드되면 데이터를 가져오고 page를 증가시킨다.
+      getList(page);
      page++;
-}); 
+});  
  
 $(window).scroll(function(){   //스크롤이 최하단 으로 내려가면 리스트를 조회하고 page를 증가시킨다.
      if($(window).scrollTop() >= $(document).height() - $(window).height()){
@@ -21,7 +22,7 @@ $(window).scroll(function(){   //스크롤이 최하단 으로 내려가면 리�
            page++;   
      } 
 });
- 
+  
 function getList(page){
  
     $.ajax({

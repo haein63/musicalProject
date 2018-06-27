@@ -24,6 +24,9 @@ width: 10%;
 height: 40px;
 font-family: Anton;
 font-size: 25px;
+text-decoration: none;
+color: black;
+
 }
 .sign_box{
 width: 13%;
@@ -56,7 +59,7 @@ text-align: center;
 </style>
 <div class="header_box">
 
-	<div class="logo_box">INTERMISSION</div>
+	<a class="logo_box" href="Main2">INTERMISSION</a>
 
 	<div class="empty_box"></div>
 	<div class="sign_box">

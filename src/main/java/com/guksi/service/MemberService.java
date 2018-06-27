@@ -1,8 +1,8 @@
 package com.guksi.service;
 
+
 import javax.servlet.http.HttpSession;
 
-import com.guksi.dao.MemberDao;
 import com.guksi.dto.MemberDto;
 
 public interface MemberService {
@@ -10,5 +10,4 @@ public interface MemberService {
 	MemberDto idSelect(String id);
 	MemberDto loginCheck(String id, String pass);
 	void logout(HttpSession session);
-
 }

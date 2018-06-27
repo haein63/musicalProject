@@ -35,12 +35,9 @@ public class MainController {
 		return "Main2";
 	}
 	
-	/*@ModelAttribute("pMusical")
-	public String PMain(Model model) {
-		List<MusicalDto> mdto = musical.getPastMusicals_desc();
-		model.addAttribute("musical", mdto);
-		return "Main2";
-	}*/
+	/*
+	@GetMapping(value="/past")*/
+	
 	
 	@GetMapping(value="/musicalInfo")
 	public String getMusicals(@RequestParam String title,Model model) {
