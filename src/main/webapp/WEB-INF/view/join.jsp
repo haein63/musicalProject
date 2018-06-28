@@ -183,7 +183,7 @@ img {
 label.error{
 color: white;
 font-size: 12px;
-
+display: flex;
 
 }
 

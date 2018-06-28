@@ -49,7 +49,7 @@ div#wrap {
 
 .login1 {
 	width: 300px;
-	height: 350px;
+	height: 400px;
 	/* border: 2px solid #D8D8D8; */
 	border: 2px solid #A6A6A6;
 	border-radius: 8px;
@@ -153,6 +153,14 @@ body {
 	height: 300px;
 	margin-bottom: 1.5rem !important;
 } 
+
+label.error{
+color: white;
+font-size: 12px;
+display: flex;
+
+}
+
 </style>
 </head>
 <%
@@ -162,7 +170,7 @@ body {
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
-		<form id="form">
+		<form id="form" action="loginCheck" method="post">
 			<c:if test="${msg == 'logout'}">
 				<div
 					style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
@@ -194,27 +202,47 @@ body {
 	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%>
 	<!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
-<script type="text/javascript">
-$("#loginbt").on("click",function(){
-	console.log($("#loginid").val());
-	if($("#loginid").val()==null){
-		console.log("아이디입력");
-	}else if($("#password").val()==null){
-		console.log("비밀번호");
-	}else{
-		/* $.ajax({
-			url:'loginCheck',
-			type:'post',
-			data:{id:$("#loginid").val(),
-				pass:$("#password").val()},
-	}) */
-		console.log("얍");
-	}
-})
-
-</script>
-
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js"></script>
+<script>
+$("#form").validate({
+	rules:{
+		id:{
+			required: true,
+			
+		},
+				
+		password:{
+			required: true,
+		},
+		
+		
+	},
+	messages:{
+		id:{
+			required: "아이디는 필수 입력입니다.",
+		},
+		password: {
+			required: "비밀번호는 필수 입력입니다.",
+		}
+	},
+	invalidHandler: function(form, validator){
+		var errors = validator.numberOfInvalids();
+		if(errors){
+			alert(validator.errorList[0].message);
+			validator.errorList[0].element.focus();
+		}
+		
+	}
+	
+	
+	
+	
+});
+	
+	
+</script>
 </html>
 
