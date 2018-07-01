@@ -49,7 +49,7 @@ div#wrap {
 
 .login1 {
 	width: 300px;
-	height: 400px;
+	height: 350px;
 	/* border: 2px solid #D8D8D8; */
 	border: 2px solid #A6A6A6;
 	border-radius: 8px;
@@ -153,14 +153,6 @@ body {
 	height: 300px;
 	margin-bottom: 1.5rem !important;
 } 
-
-label.error{
-color: white;
-font-size: 12px;
-display: flex;
-
-}
-
 </style>
 </head>
 <%
@@ -170,7 +162,7 @@ display: flex;
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
-		<form id="form" action="loginCheck" method="post">
+		<form id="form">
 			<c:if test="${msg == 'logout'}">
 				<div
 					style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
@@ -201,6 +193,7 @@ display: flex;
 	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%>
 	<!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
+<<<<<<< HEAD
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
@@ -233,6 +226,9 @@ $("#form").validate({
 });
 	
 	
-</script>
+
+
+</body>
+
 </html>
 

@@ -60,7 +60,4 @@ public class MVCConfig implements WebMvcConfigurer {
 		cmr.setDefaultEncoding("utf-8");
 		return cmr;
 	}
-
-
-
 }

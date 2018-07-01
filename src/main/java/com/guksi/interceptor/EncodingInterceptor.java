@@ -14,6 +14,4 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 	request.setCharacterEncoding("utf-8");
 	return HandlerInterceptor.super.preHandle(request, response, handler);
 }
-
-
 }
