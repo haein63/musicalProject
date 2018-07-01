@@ -197,11 +197,10 @@ display: flex;
 
 				<p id="formTop">INTERMISSION</p>
 				<p>
-				<input type="text" name="id"  id="id" placeholder="아이디"> <br>
+				<input type="text" name="id"  id="id" placeholder="아이디"> 
 				</p>
-				
 				<p>
-				<input type="text" name="name" id="name"  placeholder="이름"> <br>
+				<input type="text" name="name" id="name"  placeholder="이름"> 
 				</p>
 				<p>
 				<input type="text" name="email" id="email" placeholder="email">

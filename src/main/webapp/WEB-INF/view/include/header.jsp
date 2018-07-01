@@ -74,7 +74,7 @@ text-align: center;
 		%>
 		<input class="login" type="button" value="로그아웃" onclick="location.href='logout.do'">
 		<div class="separation">/</div>
-		<input class="memberInfo" type="button" value="회원정보" onclick="location.href='memberInfo'">
+		<input class="toDeleteForm" type="button" value="회원탈퇴" onclick="location.href='deleteForm'">
 		<%
 		}
 		%>

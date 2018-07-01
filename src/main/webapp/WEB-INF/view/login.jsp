@@ -180,8 +180,7 @@ display: flex;
 				<p id="name">INTERMISSION</p>
 				<input type="text" name="id" id="loginid" placeholder="아이디">
 				<p>
-					<input type="password" name="password" id="loginpw"
-						placeholder="비밀번호">
+					<input type="password" name="password" id="loginpw" placeholder="비밀번호">
 				<p>
 					<button id="loginbt">로그인</button>
 					<br> <br>
@@ -210,15 +209,11 @@ display: flex;
 $("#form").validate({
 	rules:{
 		id:{
-			required: true,
-			
-		},
-				
+			required: true,	
+		},		
 		password:{
 			required: true,
-		},
-		
-		
+		},	
 	},
 	messages:{
 		id:{
@@ -233,13 +228,8 @@ $("#form").validate({
 		if(errors){
 			alert(validator.errorList[0].message);
 			validator.errorList[0].element.focus();
-		}
-		
-	}
-	
-	
-	
-	
+		}	
+	}	
 });
 	
 	

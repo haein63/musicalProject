@@ -11,3 +11,4 @@ public interface MemberService {
 	MemberDto loginCheck(String id, String pass);
 	void logout(HttpSession session);
 }
+

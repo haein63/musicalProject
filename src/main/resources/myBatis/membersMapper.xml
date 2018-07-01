@@ -28,6 +28,24 @@
 		select * from members where id=#{id} and password=#{pass}
 	</select>
 	
+	 <select id="view" resultType="members">
+        SELECT 
+          id AS id, 
+          name AS name,
+          email AS email
+        FROM members
+        WHERE id = #{id}
+    </select>
+    
+	<select id="checkPw" resultType="int">
+	select count(*) from members
+	where id=#{id} and password=#{password}
+	</select>
+	
+	<delete id="delete">
+	delete from members where id=#{id}
+	</delete>
+	
 
 
 	
