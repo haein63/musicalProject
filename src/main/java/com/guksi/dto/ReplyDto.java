@@ -9,7 +9,7 @@ public class ReplyDto {
 	
 	private int reply_no;
 	private String reply_content;
-	@DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
 	private Date reply_date;
 	
 	public ReplyDto() {
