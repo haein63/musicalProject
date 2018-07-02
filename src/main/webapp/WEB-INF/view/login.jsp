@@ -17,7 +17,8 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
 	rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
@@ -137,7 +138,7 @@ body {
 	
 }
 
- img {
+img {
 	max-width: 640px;
 	padding: .25rem;
 	background-color: #fff;
@@ -145,14 +146,14 @@ body {
 	border-radius: .25rem;
 	margin-bottom: 1.5rem !important;
 	margin-top: 1.5rem !important;
-} 
+}
 
 .main_detail {
 	border: 1px solid #dee2e6;
 	width: 640px;
 	height: 300px;
 	margin-bottom: 1.5rem !important;
-} 
+}
 </style>
 </head>
 <%
@@ -162,7 +163,7 @@ body {
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->
 
 	<div class="main">
-		<form id="form">
+		<form id="form" action="loginCheck" method="post">
 			<c:if test="${msg == 'logout'}">
 				<div
 					style="text-align: center; color: black; font-family: 'Jeju Gothic', serif;">
@@ -172,7 +173,8 @@ body {
 				<p id="name">INTERMISSION</p>
 				<input type="text" name="id" id="loginid" placeholder="아이디">
 				<p>
-					<input type="password" name="password" id="loginpw" placeholder="비밀번호">
+					<input type="password" name="password" id="loginpw"
+						placeholder="비밀번호">
 				<p>
 					<button id="loginbt">로그인</button>
 					<br> <br>
@@ -193,42 +195,40 @@ body {
 	<%-- <jsp:include page="include/scroll.jsp"></jsp:include> --%>
 	<!-- 스크롤 -->
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
-<<<<<<< HEAD
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js"></script>
 <script>
-$("#form").validate({
-	rules:{
-		id:{
-			required: true,	
-		},		
-		password:{
-			required: true,
-		},	
-	},
-	messages:{
-		id:{
-			required: "아이디는 필수 입력입니다.",
+	$("#form").validate({
+		rules : {
+			id : {
+				required : true,
+			},
+			password : {
+				required : true,
+			},
 		},
-		password: {
-			required: "비밀번호는 필수 입력입니다.",
+		messages : {
+			id : {
+				required : "아이디는 필수 입력입니다.",
+			},
+			password : {
+				required : "비밀번호는 필수 입력입니다.",
+			}
+		},
+		invalidHandler : function(form, validator) {
+			var errors = validator.numberOfInvalids();
+			if (errors) {
+				alert(validator.errorList[0].message);
+				validator.errorList[0].element.focus();
+			}
 		}
-	},
-	invalidHandler: function(form, validator){
-		var errors = validator.numberOfInvalids();
-		if(errors){
-			alert(validator.errorList[0].message);
-			validator.errorList[0].element.focus();
-		}	
-	}	
-});
-	
-	
+	});
 
+	</body>
 
-</body>
-
-</html>
-
+	</html>

@@ -2,7 +2,6 @@ package com.guksi.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,13 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import com.guksi.dto.MemberDto;
 import com.guksi.dto.MusicalDto;
@@ -46,11 +45,9 @@ public class MemberController {
 		MemberDto dto2 = service.idSelect(memberdto.getId());
 		if (dto2 == null) {
 			MemberDto dto = service.joinAfter(memberdto);
-			System.out.println("controller+" + dto.getId());
 			model.addAttribute("result", dto);
 			return "myPage";
 		} else {
-			System.out.println("이미있는애");
 			return "login";
 		}
 	}
@@ -66,7 +63,9 @@ public class MemberController {
 		if (dto == null) {
 			return "login";
 		} else {
+			
 			session.setAttribute("id", id);
+		
 			List<MusicalDto> mdto = musical.getCurrentmusicals_desc();
 			model.addAttribute("musicalC", mdto);
 			mdto=musical.getPastMusicals_desc();
@@ -79,23 +78,26 @@ public class MemberController {
 	}
 	
 	   @RequestMapping("logout.do")
-	    public ModelAndView logout(HttpSession session){
-	        service.logout(session);
-	        ModelAndView mav = new ModelAndView();
-	        mav.setViewName("login");
-	        mav.addObject("msg", "logout");
-	        return mav;
+	    public String logout(HttpSession session,Model model){
+		   	session.invalidate();
+			List<MusicalDto> mdto = musical.getCurrentmusicals_desc();
+			model.addAttribute("musicalC", mdto);
+			mdto=musical.getPastMusicals_desc();
+			model.addAttribute("musicalP", mdto);
+			mdto=musical.getFutureMusicals_desc();
+			model.addAttribute("musicalF", mdto);
+	        return "Main2";
 	    }
 	   
 	
-	  
 	   
-	  
-	   
-	   
-	
-	   
-	 
+	   @GetMapping(value="/memberInfo")
+		public String memberinfo(HttpSession session , Model model) {
+			String sessionid = (String) session.getAttribute("id");
+			MemberDto dto = service.idSelect(sessionid);
+			model.addAttribute("member",dto);
+			return "memberInfo";
+		}
 	   
 	 
 	   
