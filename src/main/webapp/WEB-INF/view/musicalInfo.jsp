@@ -6,6 +6,13 @@
 <head>
 </head>
 <style>
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+*{
+	font-family: 'Jeju Gothic', serif;
+}
+
 .infoM {
 	margin: 0 auto;
 	text-align: center;
@@ -22,6 +29,8 @@
 
 .memInfo{
 font-size: 16px;
+width: 75%;
+height: 30%;
 }
 
 img {
@@ -35,8 +44,11 @@ img {
 }
 
 .footer_box {
-	bottom: 0px;
-	/* position: absolute; */
+	bottom: 0;
+	
+}
+.li{
+text-align: center;
 }
 
 </style>
@@ -50,29 +62,27 @@ img {
 		<br>	
 		<table border="1" class="memInfo">
 		<tr>
-			<td>뮤지컬 이름</td>
+			<td class="li">뮤지컬 이름</td>
 			<td>${musical.title}</td>
 		</tr>
 		<tr>
-			<td>뮤지컬 공연장</td>
+			<td class="li">뮤지컬 공연장</td>
 			<td>${musical.hall}</td>
 		</tr>
 		<tr>
-			<td>뮤지컬 캐스트</td>
+			<td class="li"><p>뮤지컬 캐스트</p></td>
 			<td>${musical.casting}</td>
 		</tr>
 		<tr>
-			<td>뮤지컬 공연기간</td>
-			<td><fmt:formatDate pattern = "yyyy-MM-dd" 
-         value = "${musical.startDate}" /> ~
-         <fmt:formatDate pattern = "yyyy-MM-dd" 
-         value = "${musical.endDate}" />
-				</td>
+			<td class="li"><p>뮤지컬 공연기간</p></td>
+			<td><fmt:formatDate pattern = "yyyy-MM-dd" value = "${musical.startDate}" /> ~
+         		<fmt:formatDate pattern = "yyyy-MM-dd" value = "${musical.endDate}" /></td>
 		</tr>
 		
 	</table>	
 	</div>
 	<br>
+		<br>
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 <script>
