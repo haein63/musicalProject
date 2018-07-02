@@ -18,7 +18,7 @@
 
 
 </head>
-<style type="text/css">
+<style>
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 body {

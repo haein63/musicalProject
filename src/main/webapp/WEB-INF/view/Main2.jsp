@@ -9,7 +9,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>INTERMISSION</title>
 </head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
+*{
+	font-family: 'Jeju Gothic', serif;
+}
+
+</style>
 <body>
 	
 	<jsp:include page="include/header.jsp"></jsp:include><!-- 헤더 -->

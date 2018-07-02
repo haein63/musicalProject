@@ -37,7 +37,7 @@ public class MainController {
 	}
 
 
-	@GetMapping(value = {"/musicalInfo", "/alert"})
+	@GetMapping(value = "/musicalInfo")
 	public String getMusicals(HttpSession session, @RequestParam String title, Model model) {
 		if (session.getAttribute("id") == null) {
 			model.addAttribute("message", 0);
