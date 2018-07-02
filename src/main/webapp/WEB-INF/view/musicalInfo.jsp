@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
 </head>
@@ -16,8 +17,12 @@
 	justify-content: space-around;
 	align-items: center;
 	justify-content: space-around;
-	font-size: 14px;
+	
 	text-align: left;
+}
+
+.memInfo{
+font-size: 16px;
 }
 
 img {
@@ -43,7 +48,7 @@ img {
 	<div class="infoM">
 		<a class="infoPoster">뮤지컬 포스터</a> <br> <img alt="1"
 			src="img/${musical.poster}">
-			
+		<br>	
 		<table border="1" class="memInfo">
 		<tr>
 			<td>뮤지컬 이름</td>
@@ -59,8 +64,11 @@ img {
 		</tr>
 		<tr>
 			<td>뮤지컬 공연기간</td>
-			<td>${musical.startDate} ~
-				${musical.endDate}</td>
+			<td><fmt:formatDate pattern = "yyyy-MM-dd" 
+         value = "${musical.startDate}" /> ~
+         <fmt:formatDate pattern = "yyyy-MM-dd" 
+         value = "${musical.endDate}" />
+				</td>
 		</tr>
 		
 	</table>	
