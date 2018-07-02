@@ -60,32 +60,18 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-	
+	@Override
+	public void update(MemberDto dto) {
+		dao.update(dto);
+		
+	}
 
 
+	@Override
+	public void delete(String id) {
+		dao.delete(id);
+	}
 
-
-
-
-
-	
-
-
-	
-
-
-
-	
-
-	
-	
-
-
-
-
-
-
-	
 
 	
 }

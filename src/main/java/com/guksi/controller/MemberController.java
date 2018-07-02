@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.guksi.dto.MemberDto;
@@ -100,8 +101,19 @@ public class MemberController {
 		}
 	   
 	 
+	   @ResponseBody
+	   @RequestMapping(value="memberupdate")
+	   public void memberupdate(MemberDto dto,Model model) {
+		   System.out.println("dididqwiodiqwduiqwidqwd"+dto.getId());
+		   service.update(dto);
+	   }
 	   
-	
+	   @ResponseBody
+	   @RequestMapping(value="del")
+	   public void del(MemberDto dto,Model model) {
+		   String id = dto.getId();
+		   service.delete(id);
+	   }
 	   
 	
 	

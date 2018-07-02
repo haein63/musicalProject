@@ -2,6 +2,9 @@ package com.guksi.dao;
 
 
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -46,43 +49,16 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 
-	
-	
+	@Override
+	public void update(MemberDto dto) {
+		session.update("update",dto );
+	}
 
 
+	@Override
+	public void delete(String id) {
+		session.delete("delete",id);
+	}
 
-	
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	
-
-
-	
-
-	
-
-	
-
-	
 
 }

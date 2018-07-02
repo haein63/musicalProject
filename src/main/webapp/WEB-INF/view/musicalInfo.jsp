@@ -76,5 +76,7 @@ img {
 	<br>
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
+<script>
 
+</script>
 </html>

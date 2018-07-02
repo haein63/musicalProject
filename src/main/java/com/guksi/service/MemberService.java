@@ -10,5 +10,7 @@ public interface MemberService {
 	MemberDto idSelect(String id);
 	MemberDto loginCheck(String id, String pass);
 	void logout(HttpSession session);
+	void update(MemberDto dto);
+	void delete(String id);
 }
 
