@@ -32,7 +32,7 @@ img {
 
 .footer_box {
 	bottom: 0px;
-	position: absolute;
+	/* position: absolute; */
 }
 
 </style>
@@ -43,15 +43,29 @@ img {
 	<div class="infoM">
 		<a class="infoPoster">뮤지컬 포스터</a> <br> <img alt="1"
 			src="img/${musical.poster}">
-		<ul>
-			<li class="detail">뮤지컬 이름:${musical.title}
-			<li class="detail">뮤지컬 공연장:${musical.hall}
-			<li class="detail">뮤지컬 캐스트:${musical.casting}
-			<li class="detail">뮤지컬 공연기간:${musical.startDate} ~
-				${musical.endDate}
-		</ul>
+			
+		<table border="1" class="memInfo">
+		<tr>
+			<td>뮤지컬 이름</td>
+			<td>${musical.title}</td>
+		</tr>
+		<tr>
+			<td>뮤지컬 공연장</td>
+			<td>${musical.hall}</td>
+		</tr>
+		<tr>
+			<td>뮤지컬 캐스트</td>
+			<td>${musical.casting}</td>
+		</tr>
+		<tr>
+			<td>뮤지컬 공연기간</td>
+			<td>${musical.startDate} ~
+				${musical.endDate}</td>
+		</tr>
+		
+	</table>	
 	</div>
-	
+	<br>
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 
