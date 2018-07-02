@@ -1,10 +1,8 @@
-
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,8 +15,9 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
 	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
@@ -50,7 +49,7 @@ div#wrap {
 
 .login1 {
 	width: 300px;
-	height: 350px;
+	height: 400px;
 	/* border: 2px solid #D8D8D8; */
 	border: 2px solid #A6A6A6;
 	border-radius: 8px;
@@ -154,8 +153,14 @@ img {
 	height: 300px;
 	margin-bottom: 1.5rem !important;
 }
+
+label.error{
+color: white;
+font-size: 12px;
+
+
+}
 </style>
-</head>
 <%
 	String context = request.getContextPath();
 %>
@@ -229,6 +234,5 @@ img {
 		}
 	});
 
-	</body>
-
+	</script>
 	</html>
