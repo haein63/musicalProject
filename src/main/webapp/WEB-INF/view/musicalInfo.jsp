@@ -17,7 +17,6 @@
 	justify-content: space-around;
 	align-items: center;
 	justify-content: space-around;
-	
 	text-align: left;
 }
 
@@ -77,6 +76,10 @@ img {
 	<jsp:include page="include/footer.jsp"></jsp:include><!-- 풋터 -->
 </body>
 <script>
-
+if(${message}==0){
+	alert('로그인이 필요합니다.');
+	history.go(-1);
+}else if(${message}==1){
+}
 </script>
 </html>

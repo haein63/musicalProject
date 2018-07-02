@@ -41,7 +41,7 @@ public class MainController {
 	public String getMusicals(HttpSession session, @RequestParam String title, Model model) {
 		if (session.getAttribute("id") == null) {
 			model.addAttribute("message", 0);
-			return "alert";
+			return "musicalInfo";
 		} else {
 			model.addAttribute("message", 1);
 			MusicalDto mdto = musical.getMusicals(title);
